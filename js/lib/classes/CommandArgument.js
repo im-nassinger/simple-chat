@@ -27,35 +27,28 @@ export default class CommandArgument {
         this.empty = !argText;
 
         if (this.empty) {
-            if (this.optional) {
-                return this.isValidBecause('é opcional.');
-            } else {
-                return this.isWrongBecause('é obrigatório.');
-            }
+            return this.optional ?
+                this.isValidBecause('é opcional.') :
+                this.isWrongBecause('é obrigatório.');
         }
         
-        if (this.needsToBe('string')) {
+        if (this.needsToBe('string'))
             return this.isValidBecause('não está vazio.');
-        }
 
         if (this.needsToBe('number')) {
             const isActuallyNumber = CommandArgument.getNumber(argText) !== null;
 
-            if (isActuallyNumber) {
-                return this.isValidBecause('é mesmo um número.');
-            } else {
-                return this.isWrongBecause('deve ser um número.');
-            }
+            return isActuallyNumber ?
+                this.isValidBecause('é mesmo um número.') :
+                this.isWrongBecause('deve ser um número.');
         }
         
         if (this.needsToBe('boolean')) {
             const isActuallyBoolean = CommandArgument.getBoolean(argText) !== null;
 
-            if (isActuallyBoolean) {
-                return this.isValidBecause('é mesmo sim ou não.');
-            } else {
-                return this.isWrongBecause('deve ser sim ou não.');
-            }
+            return isActuallyBoolean ?
+                this.isValidBecause('é mesmo sim ou não.') :
+                this.isWrongBecause('deve ser sim ou não.');
         }
     }
 
