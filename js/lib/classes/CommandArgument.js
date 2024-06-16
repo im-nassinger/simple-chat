@@ -53,11 +53,13 @@ export default class CommandArgument {
     }
 
     isValidBecause(reason) {
-        return this.checkResult = { valid: true, reason };
+        this.checkResult = { valid: true, reason };
+        return this.checkResult;
     }
 
     isWrongBecause(reason) {
-        return this.checkResult = { valid: false, reason };
+        this.checkResult = { valid: false, reason };
+        return this.checkResult;
     }
 
     needsToBe(type) {
