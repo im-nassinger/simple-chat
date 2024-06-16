@@ -49,7 +49,7 @@ export default class CommandArgument {
         }
         
         if (this.needsToBe('boolean')) {
-            const isActuallyBoolean = CommandArgument.getBoolean(cleanContent) !== null;
+            const isActuallyBoolean = CommandArgument.getBoolean(argText) !== null;
 
             if (isActuallyBoolean) {
                 return this.isValidBecause('é mesmo sim ou não.');
