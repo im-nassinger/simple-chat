@@ -1,14 +1,13 @@
 export const cleanString = (string) => 
     string
         .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[\u0300-\u036F]/g, '')
         .toLowerCase()
         .trim();
 
-export const pad = (value, length = 2, char = '0') =>
-    value.toString().padStart(length, char);
+export const pad = (value, length = 2, char = '0') => value.toString().padStart(length, char);
 
-export const nextTick = (callback) => setTimeout(callback, 1000 / 60);
+export const nextTick = (callback) => requestAnimationFrame(callback);
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
