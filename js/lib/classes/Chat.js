@@ -33,7 +33,7 @@ export default class Chat {
 
         this.setAssistantInfo({
             username : 'Assistente Virtual',
-            avatarURL: '/img/assistant_small.png'
+            avatarURL: 'img/assistant_small.png'
         });
 
         this.addMessage({
@@ -99,7 +99,7 @@ export default class Chat {
         typingIndicator.classList.add('typing-indicator', 'hidden');
 
         const typingImage = document.createElement('img');
-        typingImage.src = '/img/typing.svg';
+        typingImage.src = 'img/typing.svg';
 
         typingIndicator.appendChild(typingImage);
         return typingIndicator;
