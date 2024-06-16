@@ -180,8 +180,9 @@ export default class Chat {
         });
     }
 
-    runCommand(command, args = []) {
-        if (typeof command === 'string') command = this.findCommand(command);
+    runCommand(commandResolvable, args = []) {
+        const command = typeof commandResolvable === 'string' ?
+            this.findCommand(commandResolvable) : commandResolvable;
 
         let parsedArgs = {};
 
@@ -261,7 +262,7 @@ export default class Chat {
         }
     }
 
-    async onUserMessage(message) {
+    onUserMessage(message) {
         const callback = this.currentConfirmationCallback;
 
         if (callback) {
