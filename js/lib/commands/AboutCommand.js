@@ -11,6 +11,6 @@ export default class AboutCommand extends Command {
 
     async call() {
         await this.reply(`Olá, eu sou um chatbot criado por Nassinger! 😄`);
-        await this.reply(`Para acessar o meu código fonte, visite o repositório no [GitHub](https://github.com).`);
+        await this.reply(`Para acessar o meu código fonte, visite o repositório no [GitHub](https://github.com/im-nassinger/simple-chat).`);
     }
 }
