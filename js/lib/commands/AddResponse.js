@@ -6,6 +6,7 @@ export default class AddResponse extends Command {
             name: 'resposta',
             aliases: [],
             description: 'Adiciona uma resposta customizada para um comando.',
+            example: 'resposta tchau Até mais!',
             order: 5,
             args: [{
                 name: 'comando',

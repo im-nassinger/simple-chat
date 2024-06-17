@@ -67,11 +67,11 @@ export default class CommandArgument {
     }
 
     static getString(argText) {
-        return argText.length ? String(argText) : null;
+        return !argText.length ? null : String(argText);
     }
 
     static getNumber(argText) {
-        return !isNaN(argText) ? Number(argText) : null;
+        return isNaN(argText) ? null : Number(argText);
     }
 
     static getBoolean(argText) {
