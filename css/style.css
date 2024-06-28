@@ -455,3 +455,7 @@ button {
         border-radius: 0;
     }
 }
+
+img.loading {
+    opacity: 0;
+}

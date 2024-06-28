@@ -151,6 +151,7 @@ export default class Chat {
         const usernameElement = this.element.querySelector('.header .name');
 
         avatarElement.src = avatarURL;
+        avatarElement.classList.remove('loading');
         usernameElement.textContent = username;
     }
 
